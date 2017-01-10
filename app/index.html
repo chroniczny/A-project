@@ -3,21 +3,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gulp!</title>
-    <!-- @if target='dev' -->
-    <!-- build:css -->
-    <!-- @endif -->
+    <title>A-prjct</title>
 
-    <!-- @if target='dist' -->
-    <!-- build:css styles.css -->
-    <!-- @endif -->
-    <link rel="stylesheet" href="{,/components/**}/*.css"/>
-    <!-- make page specific styles more important -->
-    <link rel="stylesheet" href="pages/**/*.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="pages/components/greeter.css"/>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+
+    <script src="bower_components/angular-ui-router/angular-ui-router.js"></script>
+    <script src="app.module.js"></script>
+
+    <script src="hello/hello.module.js"></script>
+
+
     <!-- endbuild -->
 </head>
 <body ng-app="app" ng-controller="AppCtrl as app">
     <div ui-view="main"></div>
+    <
 
     <!-- @if target='dev' -->
     <!-- build:js -->
