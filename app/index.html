@@ -6,7 +6,7 @@
     <title>A-prjct</title>
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="pages/components/greeter.css"/>
+    <link rel="stylesheet" href="style.css"/>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -21,19 +21,34 @@
 </head>
 <body ng-app="app" ng-controller="AppCtrl as app">
     <div ui-view="main"></div>
-    <
+<header class="container-fluid">
+    <h2 class="page-header">Header</h2></header>
+<div class="container-fluid ">
+    <div class="col-sm-3 col-md-2 sidebar ">
+    <ul class="nav nav-sidebar">
+        <h3 class="sub-header">MENU</h3>
+        <li>ONE</li>
+        <li>TWO</li>
+        <li>THREE</li>
+    </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h3 class="sub-header">Main content</h3>
+        <div class="row placeholders"></div>
 
-    <!-- @if target='dev' -->
-    <!-- build:js -->
-    <!-- @endif -->
+    </div>
+</div>
+<footer class="container-fluid">
+    <h3 class="sub-header">A footer</h3>
+</footer>
+    <button class="btn-success">SOME BUTTON</button>
 
-    <!-- @if target='dist' -->
-    <!-- build:js scripts.js -->
-    <!-- @endif -->
+
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="{,/pages/**}/*.js"></script>
-    <script src="{,/components/**}/*.js"></script>
+    <!--<script src="{,/pages/**}/*.js"></script>-->
+    <!--<script src="{,/components/**}/*.js"></script>-->
     <!-- endbuild -->
 </body>
 </html>
