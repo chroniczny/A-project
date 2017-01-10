@@ -1,5 +1,5 @@
 angular.module('app.pages.hello', ['app.greeter'])
-    .config(($stateProvider) => {
+    .config(($stateProvider) , {
         $stateProvider.state('app.hello', {
             url: '',
             views: {

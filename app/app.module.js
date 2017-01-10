@@ -5,7 +5,7 @@ angular.module('app', [
 
     'app.pages.hello'
 ])
-    .config($stateProvider => {
+    .config($stateProvider , {
         $stateProvider.state('app', {
             url: '',
             abstract: true
