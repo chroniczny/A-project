@@ -2,4 +2,6 @@
 
 angular.module('app', [
     'userList'
+    // ,
+    // 'core'
 ]);

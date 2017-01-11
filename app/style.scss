@@ -15,5 +15,18 @@ a {
   background-color: transparent;
 }
 
+//.thumb {
+//  position: absolute;
+//}
+
+a.thumb > img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 20px ;
+  //position: relative;
+  //left: 0;
+  //top: 0;
+}
 
 
