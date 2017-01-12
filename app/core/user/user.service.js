@@ -7,7 +7,7 @@
 // module('core.user').
 // factory('User', ['$resource',
 //     function($resource) {
-//         return $resource('Users/users.json', {}, {
+//         return $resource('/users.json', {}, {
 //             query: {
 //                 method: 'GET',
 //                 params: {userId: ''},

@@ -16,3 +16,11 @@ a.thumb > img {
   height: 80px;
   float: left;
   margin-right: 20px; }
+
+.user-images {
+  float: left;
+  max-width: 300px;
+  max-height: 300px; }
+
+button.change-photo {
+  display: block; }

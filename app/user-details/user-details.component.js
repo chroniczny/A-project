@@ -1,14 +1,17 @@
 /**
- * Created by jkwiatkowski on 11.01.2017.
+ * Created by jkwiatkowski on 12.01.2017.
  */
 'use strict';
 
-angular.module('userList')
-    .component('userList', {
-        templateUrl: 'user-list/user-list.template.html',
+
+angular.module('userDetails')
+    .component('userDetails', {
+        templateUrl: 'user-details/user-details.template.html',
 
         controller: UserListController
 
+
+// ]
     });
 
 function UserListController() {

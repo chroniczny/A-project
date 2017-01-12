@@ -10,8 +10,8 @@
 //         when('/Users', {
 //             template: '<user-list></user-list>'
 //         }).
-//         // when('/phones/:phoneId', {
-//         //     template: '<phone-detail></phone-detail>'
+//         // when('/phones/:userId', {
+//         //     template: '<user-detail></user-detail>'
 //         // }).
 //         otherwise('/Users');
 //     }
