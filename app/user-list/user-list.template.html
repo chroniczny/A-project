@@ -2,15 +2,15 @@
     <h4 class="sub-header">Users</h4>
     <div class="row placeholders">
         <div class="row">
-            <input type="text" ng-model="$ctrl.users[0].name.first"/>
-            <button ng-click="" class="btn">Search</button>
+            <input type="text" ng-model="$ctrl.orderProp"/>
+            <button ng-click="$ctrl.searchUser()" class="btn">Search</button>
             <button class="btn">Add user</button>
         </div>
     </div>
     <div class="row">
         <!--<pre>{{ $ctrl.users | json }}</pre>-->
         <ul class="users">
-            <li ng-repeat="user in $ctrl.users" class="thumbnail">
+            <li ng-repeat="user in $ctrl.users | filter: $ctrl.filterProp | orderBy: $ctrl.sortProp" class="thumbnail">
                 <a href="#!/Users/{{user.name.last}}" class="thumb">
                     <img ng-src="https://thumbs.dreamstime.com/x/stress-concept-exhausted-businessman-work-44859217.jpg" alt="{{user.name.last}}"/>
                 </a>
