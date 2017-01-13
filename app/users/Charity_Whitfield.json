@@ -1,0 +1,57 @@
+{
+  "_id": "5874d1f266e0605fa43fb1eb",
+  "index": 4,
+  "guid": "83c8c974-332d-4ba2-9392-fbd087dcd4df",
+  "isActive": false,
+  "balance": "$1,773.50",
+  "picture": "http://placehold.it/32x32",
+  "age": 26,
+  "eyeColor": "green",
+  "name": {
+    "first": "Charity",
+    "last": "Whitfield"
+  },
+  "company": "UNEEQ",
+  "email": "charity.whitfield@uneeq.info",
+  "phone": "+1 (944) 565-2345",
+  "address": "797 Prescott Place, Richville, Alaska, 8775",
+  "about": "Incididunt velit irure qui anim ad excepteur consequat dolore nulla. Tempor qui magna elit fugiat eu cupidatat. Cillum officia sint laborum mollit duis. Et fugiat ipsum sunt ad dolore voluptate cillum labore.",
+  "registered": "Wednesday, April 27, 2016 4:31 PM",
+  "latitude": "-29.424574",
+  "longitude": "-37.786734",
+  "tags": [
+    "labore",
+    "aliqua",
+    "elit",
+    "irure",
+    "sint"
+  ],
+  "range": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Rena Gardner"
+    },
+    {
+      "id": 1,
+      "name": "Melendez Houston"
+    },
+    {
+      "id": 2,
+      "name": "Petty Ruiz"
+    }
+  ],
+  "greeting": "Hello, Charity! You have 9 unread messages.",
+  "favoriteFruit": "strawberry"
+}

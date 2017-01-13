@@ -1,0 +1,57 @@
+{
+  "_id": "5874d1f2e5a0fbb3c889514d",
+  "index": 5,
+  "guid": "abf5409f-b1c0-46f5-805b-a93c86ef06c3",
+  "isActive": true,
+  "balance": "$2,393.40",
+  "picture": "http://placehold.it/32x32",
+  "age": 27,
+  "eyeColor": "brown",
+  "name": {
+    "first": "Lambert",
+    "last": "Cunningham"
+  },
+  "company": "KAGE",
+  "email": "lambert.cunningham@kage.co.uk",
+  "phone": "+1 (835) 574-3231",
+  "address": "953 Hooper Street, Onton, Pennsylvania, 3116",
+  "about": "Consectetur eiusmod ipsum enim nostrud aute cillum. Ea aliquip est voluptate reprehenderit cupidatat ex aliqua ea. Sit enim magna quis cillum proident nostrud anim enim fugiat incididunt non. Cupidatat elit ipsum irure nostrud culpa esse quis ullamco. Pariatur laboris tempor elit aute laboris aute fugiat irure laboris mollit incididunt consectetur laboris.",
+  "registered": "Thursday, May 5, 2016 5:52 AM",
+  "latitude": "-44.259621",
+  "longitude": "-11.042156",
+  "tags": [
+    "sint",
+    "dolore",
+    "culpa",
+    "laboris",
+    "laborum"
+  ],
+  "range": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Araceli Owen"
+    },
+    {
+      "id": 1,
+      "name": "Charlene Gibson"
+    },
+    {
+      "id": 2,
+      "name": "Antoinette Horn"
+    }
+  ],
+  "greeting": "Hello, Lambert! You have 8 unread messages.",
+  "favoriteFruit": "strawberry"
+}

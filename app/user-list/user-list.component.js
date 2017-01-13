@@ -9,6 +9,16 @@ angular.module('userList')
 
         controller: UserListController
 
+
+    //         ['$http', function(Shttp){
+    //             var userList = this;
+    //             userList.users = [];
+    //
+    //             $http.get('users/users.json').success(function(data){
+    //                 userList.users = data;
+    //             })
+    //         }
+    //         ]
     });
 
 function UserListController() {
@@ -72,10 +82,10 @@ function UserListController() {
 
 
     this.sortProp = 'name.first'; // filter: sorting results of searching by first name
-    this.orderProp = '';
+    this.searchValue = '';
 
     this.searchUser = function searchUser() {
-        this.filterProp = this.orderProp;
+        this.filterProp = this.searchValue;
     }
 
 }

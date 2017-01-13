@@ -1,0 +1,57 @@
+  {
+    "_id": "5874d1f2a27df5e37e7ee832",
+    "index": 0,
+    "guid": "02b4eb76-6f9e-465c-952d-a4935eefac3a",
+    "isActive": true,
+    "balance": "$3,990.96",
+    "picture": "http://placehold.it/32x32",
+    "age": 40,
+    "eyeColor": "blue",
+    "name": {
+      "first": "Winnie",
+      "last": "Ballard"
+    },
+    "company": "LIMOZEN",
+    "email": "winnie.ballard@limozen.tv",
+    "phone": "+1 (907) 477-3906",
+    "address": "674 Greenpoint Avenue, Blandburg, Alabama, 6160",
+    "about": "Sit Lorem labore aliquip laboris reprehenderit nulla adipisicing occaecat tempor ipsum ex minim culpa fugiat. Lorem culpa cillum exercitation reprehenderit sint sint. Mollit cillum id officia proident amet ut id magna. Tempor dolore fugiat irure eiusmod in sit amet id ad non.",
+    "registered": "Saturday, February 21, 2015 1:20 AM",
+    "latitude": "-70.881896",
+    "longitude": "78.826322",
+    "tags": [
+      "est",
+      "consequat",
+      "velit",
+      "sint",
+      "tempor"
+    ],
+    "range": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Sears Smith"
+      },
+      {
+        "id": 1,
+        "name": "Helena Mathews"
+      },
+      {
+        "id": 2,
+        "name": "Sabrina Terrell"
+      }
+    ],
+    "greeting": "Hello, Winnie! You have 9 unread messages.",
+    "favoriteFruit": "strawberry"
+  }

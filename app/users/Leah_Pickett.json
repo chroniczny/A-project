@@ -1,0 +1,57 @@
+  {
+    "_id": "5874d1f269c1d5fecd7da395",
+    "index": 2,
+    "guid": "eedac3b9-68f5-4d89-b703-b60f42486dec",
+    "isActive": false,
+    "balance": "$3,752.94",
+    "picture": "http://placehold.it/32x32",
+    "age": 40,
+    "eyeColor": "green",
+    "name": {
+      "first": "Leah",
+      "last": "Pickett"
+    },
+    "company": "AQUAFIRE",
+    "email": "leah.pickett@aquafire.name",
+    "phone": "+1 (895) 410-3170",
+    "address": "339 Minna Street, Bridgetown, North Dakota, 2340",
+    "about": "Excepteur et dolore sint amet nulla proident fugiat anim do. Laborum ullamco dolore culpa esse ut labore pariatur ipsum. Est ad adipisicing excepteur esse velit commodo proident dolore nisi. Dolor non eiusmod ut nisi culpa est consequat id do officia dolore ut.",
+    "registered": "Saturday, May 10, 2014 4:19 PM",
+    "latitude": "14.421399",
+    "longitude": "-51.146297",
+    "tags": [
+      "ipsum",
+      "tempor",
+      "occaecat",
+      "et",
+      "ea"
+    ],
+    "range": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Vinson Clemons"
+      },
+      {
+        "id": 1,
+        "name": "Adrian Simon"
+      },
+      {
+        "id": 2,
+        "name": "Austin Guerrero"
+      }
+    ],
+    "greeting": "Hello, Leah! You have 8 unread messages.",
+    "favoriteFruit": "banana"
+  }

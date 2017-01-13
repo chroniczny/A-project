@@ -1,0 +1,57 @@
+  {
+    "_id": "5874d1f2ad208701ff6ceeff",
+    "index": 1,
+    "guid": "e2d7d07f-a802-4390-8e7d-ddbaadd6f5b8",
+    "isActive": true,
+    "balance": "$3,269.58",
+    "picture": "http://placehold.it/32x32",
+    "age": 20,
+    "eyeColor": "brown",
+    "name": {
+      "first": "Sandy",
+      "last": "Reilly"
+    },
+    "company": "TERAPRENE",
+    "email": "sandy.reilly@teraprene.biz",
+    "phone": "+1 (811) 431-2038",
+    "address": "130 Troutman Street, Hoehne, Minnesota, 4796",
+    "about": "Eiusmod occaecat sit Lorem mollit commodo ea voluptate occaecat veniam ea duis. Aliquip dolore ut et in aliqua in velit fugiat sint incididunt laboris. Anim Lorem velit reprehenderit aliqua sit nostrud ea laboris laboris enim reprehenderit elit laborum pariatur. Adipisicing do do id incididunt nisi quis minim occaecat excepteur occaecat qui. Mollit ullamco deserunt cillum ut officia culpa quis ipsum elit proident deserunt quis labore minim. Commodo do nostrud do velit cillum fugiat. Velit dolore tempor commodo nulla sint irure deserunt occaecat aute ut.",
+    "registered": "Thursday, December 4, 2014 8:39 AM",
+    "latitude": "-7.017884",
+    "longitude": "148.078024",
+    "tags": [
+      "laborum",
+      "in",
+      "veniam",
+      "commodo",
+      "exercitation"
+    ],
+    "range": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Autumn Bird"
+      },
+      {
+        "id": 1,
+        "name": "Brooke Gutierrez"
+      },
+      {
+        "id": 2,
+        "name": "Gertrude Valencia"
+      }
+    ],
+    "greeting": "Hello, Sandy! You have 10 unread messages.",
+    "favoriteFruit": "banana"
+  }

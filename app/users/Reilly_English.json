@@ -1,0 +1,57 @@
+{
+  "_id": "5874d1f2ef62aff8dc3e80d8",
+  "index": 7,
+  "guid": "bbe0212f-4a7b-49ef-aaa8-1a40e92da039",
+  "isActive": true,
+  "balance": "$2,029.16",
+  "picture": "http://placehold.it/32x32",
+  "age": 33,
+  "eyeColor": "green",
+  "name": {
+    "first": "Reilly",
+    "last": "English"
+  },
+  "company": "MEDMEX",
+  "email": "reilly.english@medmex.com",
+  "phone": "+1 (944) 440-3068",
+  "address": "443 Ridgecrest Terrace, Brantleyville, Virgin Islands, 2911",
+  "about": "Eiusmod deserunt ea aliqua eiusmod est adipisicing velit. Irure excepteur non esse adipisicing voluptate. Est nisi enim anim ea duis labore ea enim qui id tempor. Adipisicing pariatur minim fugiat et esse do voluptate ut aliqua voluptate enim sunt commodo. Consectetur consequat qui et culpa irure ex irure cillum fugiat ullamco.",
+  "registered": "Saturday, November 12, 2016 11:11 PM",
+  "latitude": "-7.297564",
+  "longitude": "154.470306",
+  "tags": [
+    "consectetur",
+    "id",
+    "laborum",
+    "est",
+    "cupidatat"
+  ],
+  "range": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Brooks Ward"
+    },
+    {
+      "id": 1,
+      "name": "Hansen Mccormick"
+    },
+    {
+      "id": 2,
+      "name": "Gross Melendez"
+    }
+  ],
+  "greeting": "Hello, Reilly! You have 8 unread messages.",
+  "favoriteFruit": "banana"
+}

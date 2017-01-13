@@ -1,0 +1,61 @@
+  {
+    "_id": "5874d1f2c9405d74a4d0caa6",
+    "index": 3,
+    "guid": "6db642d1-6708-4c02-a100-cff5184ef3a7",
+    "isActive": false,
+    "balance": "$1,350.61",
+    "picture": "http://placehold.it/32x32",
+    "age": 31,
+    "eyeColor": "green",
+    "name": {
+      "first": "Talley",
+      "last": "Cooke"
+    },
+    "company": "LUXURIA",
+    "email": "talley.cooke@luxuria.us",
+    "phone": "+1 (988) 412-3982",
+    "address": "188 Colby Court, Sheatown, Wisconsin, 9506",
+    "about": "Ad sint pariatur laborum tempor labore ad sit dolor excepteur cillum. Aute ipsum ex officia ullamco et elit est cillum laboris occaecat fugiat. Cillum pariatur eu commodo ut reprehenderit labore sit adipisicing duis proident adipisicing non id. Deserunt pariatur esse non dolor cillum nisi voluptate duis esse sint consectetur occaecat. Enim tempor commodo cupidatat ad ullamco.",
+    "registered": "Saturday, May 28, 2016 6:03 AM",
+    "latitude": "29.617321",
+    "longitude": "-79.521935",
+    "tags": [
+      "consectetur",
+      "eu",
+      "enim",
+      "incididunt",
+      "cupidatat"
+    ],
+    "range": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Lillian Howe"
+      },
+      {
+        "id": 1,
+        "name": "Thomas Walker"
+      },
+      {
+        "id": 2,
+        "name": "John Mckenzie"
+      }
+    ],
+    "greeting": "Hello, Talley! You have 9 unread messages.",
+    "favoriteFruit": "banana"
+  }
+    ],
+    "greeting": "Hello, Charity! You have 9 unread messages.",
+    "favoriteFruit": "strawberry"
+  }

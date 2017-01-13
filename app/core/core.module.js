@@ -4,4 +4,4 @@
 // 'use strict';
 // //
 // // Define the `core` module
-// angular.module('core', ['ngResource']);
+angular.module('core', ['ngResource']);
