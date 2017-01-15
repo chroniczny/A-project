@@ -96,13 +96,4 @@ angular.module('app')
 //        }
 //    ];
 //
-//
-//
-//    this.sortProp = 'name.first'; // filter: sorting results of searching by first name
-//    this.searchValue = '';
-//
-//    this.searchUser = function searchUser() {
-//        this.filterProp = this.searchValue;
-//    }
-//
 //}

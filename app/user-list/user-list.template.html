@@ -16,9 +16,9 @@
                 <img ng-src="https://thumbs.dreamstime.com/x/stress-concept-exhausted-businessman-work-44859217.jpg"
                      alt="{{user.name.last}}"/>
 
-                <a href="#!/user/{{user.id}}">{{user.name.first}} {{user.name.last}}</a>
+                <a href="#/user/{{user.name.first+'_'+user.name.last}}">{{user.name.first}} {{user.name.last}}</a>
                 <p>{{user.email}}</p>
-                <a href="#!/user/{{user.id}}" class="thumb">
+                <a href="#/user/{{user.name.first+'_'+user.name.last}}" class="thumb">
                     <button class="navbar-btn" ng-click="" >Edit</button>
                 </a>
                 <button class="navbar-btn" ng-click="" >Del</button>
