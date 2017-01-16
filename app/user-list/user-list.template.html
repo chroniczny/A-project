@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <!--<pre>{{ $ctrl.users | json }}</pre>-->
+        <pre>{{ $ctrl.users | json }}</pre>
         <ul class="users">
             <li ng-repeat="user in $ctrl.users | filter: $ctrl.filterProp | orderBy: $ctrl.sortProp" class="thumbnail">
 
