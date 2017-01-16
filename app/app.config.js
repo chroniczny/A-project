@@ -1,21 +1,22 @@
-// 'use strict';
-//
-// angular.
-// module('app', ['ngRoute']).
-// config(['$locationProvider', '$routeProvider',
-//     function config($locationProvider, $routeProvider) {
-//         $locationProvider.hashPrefix('!');
-//
-//         $routeProvider.
-//         when('/users', {
-//             template: '<user-list></user-list>'
-//         }).
-//         when('/users/:usersId', {
-//             template: '<user-detail></user-detail>'
-//
-//         }).
-//         otherwise('/users');
-//     }
-// ]);
+'use strict';
+
+angular.
+module('app').
+config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $locationProvider.hashPrefix('!');
+
+        $routeProvider
+            .when('/Users', {
+            template: '<user-list></user-list>'
+        })
+            .when('/Users/:userId', {
+                // template: '<p>ZZZZZZZZZZZZZZZZ</p>'
+            template: '<user-detail></user-detail>'
+            // templateUrl : 'user-detail/user-detail.template.html'
+        })
+            .otherwise('/Users');
+    }
+]);
 
 

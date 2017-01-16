@@ -17,7 +17,7 @@ angular.module('app')
                 self.searchUser = function searchUser() {
                     self.filterProp = self.searchValue;
                 };
-                $http.get('users/users.json').then(function(response){
+                $http.get('Users/users.json').then(function(response){
                     self.users = response.data;
                 });
               }
@@ -26,7 +26,7 @@ angular.module('app')
     });
 
 //function UserListController() {
-//    this.users =
+//    this.Users =
 //        //Factory.query();
 //        [
 //        {
