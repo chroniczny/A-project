@@ -4,21 +4,21 @@
         <div class="row">
             <input type="text" ng-model="$ctrl.searchValue"/>
             <button ng-click="$ctrl.searchUser()" class="btn">Search</button>
-            <button class="btn">Add user</button>
+            <a href="#!/users/{{user.id}}"><button class="btn">Add user</button></a>
         </div>
     </div>
     <div class="row">
-        <pre>{{ $ctrl.users | json }}</pre>
+        <!--<pre>{{ $ctrl.users | json }}</pre>-->
         <ul class="users">
             <li ng-repeat="user in $ctrl.users | filter: $ctrl.filterProp | orderBy: $ctrl.sortProp" class="thumbnail">
 
 
                 <img ng-src="https://thumbs.dreamstime.com/x/stress-concept-exhausted-businessman-work-44859217.jpg"
-                     alt="{{user.name.last}}"/>
+                     alt="{{user.name.first}}_{{user.name.last}}"/>
 
-                <a href="#/user/{{user.name.first+'_'+user.name.last}}">{{user.name.first}} {{user.name.last}}</a>
+                <a href="#!/users/{{user.id}}"> {{user.name.first}} {{user.name.last}}</a>
                 <p>{{user.email}}</p>
-                <a href="#/user/{{user.name.first+'_'+user.name.last}}" class="thumb">
+                <a href="#!/users/{{user.id}}" class="thumb">
                     <button class="navbar-btn" ng-click="" >Edit</button>
                 </a>
                 <button class="navbar-btn" ng-click="" >Del</button>

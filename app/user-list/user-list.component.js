@@ -22,18 +22,7 @@ angular.module('app')
                 });
               }
             ]
-        //} ]
 
-
-    //         ['$http', function(Shttp){
-    //             var userList = this;
-    //             userList.users = [];
-    //
-    //             $http.get('users/users.json').success(function(data){
-    //                 userList.users = data;
-    //             })
-    //         }
-    //         ]
     });
 
 //function UserListController() {

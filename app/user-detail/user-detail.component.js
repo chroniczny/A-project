@@ -7,23 +7,16 @@
 angular.module('userDetail')
     .component('userDetail', {
         templateUrl: 'user-detail/user-detail.template.html',
+        // template: 'Something new - a new detail <span>{{$ctrl.users.id}}</span>', not working {{}}
+        controller: ['$http', '$routeParams',
+        function UserDetailController($http, $routeParams){
+            // this.userId = $routeParams.userId;
+            var self = this;
 
-        controller: UserDetailController
+            $http.get('users/'+$routeParams.userId+'.json')
+                .then(function(response){
+                    self.user = response.data;
+                });
 
-
-// ]
+        }]
     });
-
-function UserDetailController() {
-    var newUser = this;
-    // newUser.user = {};
-
-    newUser.addUser = function(user) {
-        users.push(newUser.user);
-    };
-
-
-
-
-
-}
