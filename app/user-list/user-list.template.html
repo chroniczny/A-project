@@ -4,26 +4,26 @@
         <div class="row">
             <input type="text" ng-model="$ctrl.searchValue"/>
             <button ng-click="$ctrl.searchUser()" class="btn">Search</button>
-            <a href="#!/Users/NewUser"><button class="btn" >Add user</button></a>
+            <a href="#!/users/newUser"><button class="btn" >Add user</button></a>
         </div>
     </div>
     <div class="row">
-        <!--<pre>{{ $ctrl.Users | json }}</pre>-->
+        <!--<pre>{{ $ctrl.users | json }}</pre>-->
         <ul class="users">
             <li ng-repeat="user in $ctrl.users | filter: $ctrl.filterProp | orderBy: $ctrl.sortProp" class="thumbnail">
 
                 <img ng-src="https://thumbs.dreamstime.com/x/stress-concept-exhausted-businessman-work-44859217.jpg"
                      alt="{{user.name.first}}_{{user.name.last}}"/>
 
-                <a href="#!/Users/{{user.id}}"> {{user.name.first}} {{user.name.last}}</a>
+                <a href="#!/users/{{user.id}}"> {{user.name.first}} {{user.name.last}}</a>
                 <p>{{user.email}}</p>
-                <a href="#!/Users/{{user.id}}" class="thumb">
+                <a href="#!/users/{{user.id}}" class="thumb">
                     <button class="navbar-btn" >Edit</button>
                 </a>
                 <button class="navbar-btn" ng-click="" >Del</button>
             </li>
         </ul>
-        <button class="btn-success">Pagination</button>
+        <button class="btn-success" ng-click="">Pagination</button>
     </div>
     <!--<button class="btn-success">SOME BUTTON</button>-->
 </div>

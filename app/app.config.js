@@ -9,16 +9,16 @@ config(['$locationProvider', '$routeProvider',
         $locationProvider.hashPrefix('!');
 
         $routeProvider
-            .when('/Users', {
+            .when('/users', {
             template: '<user-list></user-list>'
         })
-            .when('/Users/:userId', {
+            .when('/users/:userId', {
             template: '<user-detail></user-detail>'
         })
-            .when('/Users/NewUser', {
+            .when('/users/newUser', {
                 template: '<user-new></user-new>'
             })
-            .otherwise('/Users');
+            .otherwise('/users');
     }
 ]);
 

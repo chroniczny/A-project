@@ -18,21 +18,23 @@ angular.module('app')
                     self.filterProp = self.searchValue;
                 };
 
-                self.addUser = function addUser() {
+                $http.get('users/users.json').then(function(response){
+                    //self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
+                // localStorage.removeItem('UserStorage');
 
-                };
+                     // setting data to localStorage in JSON format
+                localStorage.setItem('UserInStorage', JSON.stringify(response.data) );
 
-                $http.get('Users/users.json').then(function(response){
-                    self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
+                     //viewing full localStorage in console
+                console.log(localStorage.getItem('UserInStorage'));
+
+                    // taking viewing data for templates by using localStorage data
+                self.users = JSON.parse(localStorage.getItem('UserInStorage'));
                 });
 
 
-                // $http.post('Users/users.json', data).then(function(response){
-                //     self.data = {
-                //
-                //     };
-                //     self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
-                // });
+
+
 
               }
             ]

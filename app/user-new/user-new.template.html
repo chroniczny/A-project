@@ -9,7 +9,7 @@
             <button class="btn-info change-photo">Change photo</button>
         </div>
         <div class="input-group col-md-5 main"
-             ng-submit="UserDetailController.addDetail(user)">
+             ng-submit="ctrl.addDetail(user)">
             Name: * <br>
             <input ng-model="$ctrl.user.name.first" type="text" class="input-sm" name="$ctrl.name.first" placeholder="Name"
                    required="required"><br>
@@ -22,7 +22,7 @@
             <div>
                 Description: <br>
                 <input ng-model="$user.about" type="text" name="about" class="input-lg"><br>
-                <button ng-click="UserDetailController.addDetail(user)" class="btn-success">Save</button>
+                <button ng-click="$ctrl.addDetail(user)" class="btn-success">Save</button>
                 <button class="btn-success">Cancel</button>
             </div>
         </div>
