@@ -1,20 +1,23 @@
 'use strict';
 
 angular.
-module('app', ['ngRoute']).
+
+module('app').
+
 config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
 
-        $routeProvider.
-        when('/users', {
+        $routeProvider
+            .when('/Users', {
             template: '<user-list></user-list>'
-        }).
-        when('/users/:usersId', {
+        })
+            .when('/Users/:userId', {
+                // template: '<p>ZZZZZZZZZZZZZZZZ</p>'
             template: '<user-detail></user-detail>'
-
-        }).
-        otherwise('/users');
+            // templateUrl : 'user-detail/user-detail.template.html'
+        })
+            .otherwise('/Users');
     }
 ]);
 
