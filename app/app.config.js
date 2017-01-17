@@ -13,10 +13,11 @@ config(['$locationProvider', '$routeProvider',
             template: '<user-list></user-list>'
         })
             .when('/Users/:userId', {
-                // template: '<p>ZZZZZZZZZZZZZZZZ</p>'
             template: '<user-detail></user-detail>'
-            // templateUrl : 'user-detail/user-detail.template.html'
         })
+            .when('/Users/NewUser', {
+                template: '<user-new></user-new>'
+            })
             .otherwise('/Users');
     }
 ]);

@@ -1,0 +1,57 @@
+  {
+    "id": "NewUser",
+    "index": 0,
+    "guid": "",
+    "isActive": true,
+    "balance": "",
+    "picture": "http://placehold.it/32x32",
+    "age": 40,
+    "eyeColor": "blue",
+    "name": {
+      "first": "Name",
+      "last": "Surname"
+    },
+    "company": "",
+    "email": "",
+    "phone": "",
+    "address": "6",
+    "about": "Tempor dolore fugiat irure eiusmod in sit amet id ad non.",
+    "registered": "",
+    "latitude": "",
+    "longitude": "",
+    "tags": [
+      "est",
+      "consequat",
+      "velit",
+      "sint",
+      "tempor"
+    ],
+    "range": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Sears Smith"
+      },
+      {
+        "id": 1,
+        "name": "Helena Mathews"
+      },
+      {
+        "id": 2,
+        "name": "Sabrina Terrell"
+      }
+    ],
+    "greeting": "You have 9 unread messages.",
+    "favoriteFruit": "strawberry"
+  }

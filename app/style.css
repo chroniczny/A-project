@@ -18,7 +18,7 @@ li.thumbnail > img {
   margin-right: 20px; }
 
 .user-images {
-  float: left;
+  display: block;
   max-width: 300px;
   max-height: 300px; }
 

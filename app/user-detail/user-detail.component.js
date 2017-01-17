@@ -8,7 +8,7 @@ angular.module('userDetail')
     .component('userDetail', {
         templateUrl: 'user-detail/user-detail.template.html',
 
-        // template: <
+
         controller: ['$http', '$routeParams',
         function UserDetailController($http, $routeParams){
 

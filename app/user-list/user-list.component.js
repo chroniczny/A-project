@@ -17,9 +17,23 @@ angular.module('app')
                 self.searchUser = function searchUser() {
                     self.filterProp = self.searchValue;
                 };
+
+                self.addUser = function addUser() {
+
+                };
+
                 $http.get('Users/users.json').then(function(response){
-                    self.users = response.data;
+                    self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
                 });
+
+
+                // $http.post('Users/users.json', data).then(function(response){
+                //     self.data = {
+                //
+                //     };
+                //     self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
+                // });
+
               }
             ]
 

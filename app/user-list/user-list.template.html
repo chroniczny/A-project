@@ -4,7 +4,7 @@
         <div class="row">
             <input type="text" ng-model="$ctrl.searchValue"/>
             <button ng-click="$ctrl.searchUser()" class="btn">Search</button>
-            <a href="#!/Users/{{user.id}}"><button class="btn" >Add user</button></a>
+            <a href="#!/Users/NewUser"><button class="btn" >Add user</button></a>
         </div>
     </div>
     <div class="row">
@@ -18,10 +18,9 @@
                 <a href="#!/Users/{{user.id}}"> {{user.name.first}} {{user.name.last}}</a>
                 <p>{{user.email}}</p>
                 <a href="#!/Users/{{user.id}}" class="thumb">
-                    <button class="navbar-btn" ng-click="" >Edit</button>
+                    <button class="navbar-btn" >Edit</button>
                 </a>
                 <button class="navbar-btn" ng-click="" >Del</button>
-
             </li>
         </ul>
         <button class="btn-success">Pagination</button>
