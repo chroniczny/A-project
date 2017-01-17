@@ -1,0 +1,58 @@
+
+  {
+    "id": "5874d1f2659201982b786d18",
+    "index": 6,
+    "guid": "eef10ef1-806a-4a32-b5ae-af549e90a214",
+    "isActive": false,
+    "balance": "$2,079.14",
+    "picture": "http://placehold.it/32x32",
+    "age": 20,
+    "eyeColor": "green",
+    "name": {
+      "first": "Christy",
+      "last": "Waters"
+    },
+    "company": "EURON",
+    "email": "christy.waters@euron.net",
+    "phone": "+1 (867) 416-3334",
+    "address": "619 Kingston Avenue, Ilchester, Utah, 7303",
+    "about": "Culpa qui est ut dolore et deserunt aute fugiat et. Veniam eu reprehenderit voluptate eu. Quis elit nisi ex Lorem reprehenderit amet laborum velit proident eu et cupidatat cupidatat.",
+    "registered": "Monday, November 9, 2015 11:08 AM",
+    "latitude": "21.868868",
+    "longitude": "59.896762",
+    "tags": [
+      "nisi",
+      "sint",
+      "do",
+      "minim",
+      "aliqua"
+    ],
+    "range": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Browning Mccullough"
+      },
+      {
+        "id": 1,
+        "name": "Sherry Garcia"
+      },
+      {
+        "id": 2,
+        "name": "Fleming Cote"
+      }
+    ],
+    "greeting": "Hello, Christy! You have 5 unread messages.",
+    "favoriteFruit": "strawberry"
+  }

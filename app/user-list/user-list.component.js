@@ -23,13 +23,15 @@ angular.module('app')
                 // localStorage.removeItem('UserStorage');
 
                      // setting data to localStorage in JSON format
-                localStorage.setItem('UserInStorage', JSON.stringify(response.data) );
+                localStorage.setItem('UserInStorage', JSON.stringify(response.data));
 
                      //viewing full localStorage in console
-                console.log(localStorage.getItem('UserInStorage'));
+                // console.log(localStorage.getItem('UserInStorage'));
 
                     // taking viewing data for templates by using localStorage data
                 self.users = JSON.parse(localStorage.getItem('UserInStorage'));
+
+
                 });
 
 

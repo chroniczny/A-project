@@ -15,10 +15,23 @@ angular.module('userDetail')
             this.userId = $routeParams.userId;
             var self = this;
 
-            $http.get('Users/'+$routeParams.userId+'.json')
+            $http.get('users/'+$routeParams.userId+'.json')
                 .then(function(response){
-                    self.user = response.data;
+                    // self.user = response.data;
+
+                    localStorage.setItem("'" + $routeParams.userId + "'", JSON.stringify(response.data));
+                    //viewing full localStorage in console
+                    console.log(localStorage.getItem("'" + $routeParams.userId + "'"));
+
+                    // taking viewing data for templates by using localStorage data
+                    self.user = JSON.parse(localStorage.getItem("'"+$routeParams.userId+"'"));
+
+                    //cleaning localStorage from this used item:
+                    localStorage.removeItem("'" + $routeParams.userId + "'", JSON.stringify(response.data));
+
                 });
+
+            $http.delete()
 
         }]
     });
