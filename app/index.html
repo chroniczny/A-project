@@ -10,14 +10,19 @@
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <!--<script src="bower_components/angular-ui-router/angular-ui-router.js"></script>-->
 
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
-    <!--<script src="core/core.module.js"></script>-->
-    <!--<script src="core/user/user.module.js"></script>-->
-    <!--<script src="core/user/user.service.js"></script>-->
+
+    <!-- -XXXXXXXXXXXX  for the factory and $resource stuff-->
+    <script src="core/core.module.js"></script>
+    <script src="core/user/user.module.js"></script>
+    <script src="core/user/user.service.js"></script>
+
+
     <script src="user-list/user-list.module.js"></script>
     <script src="user-list/user-list.component.js"></script>
     <script src="user-detail/user-detail.module.js"></script>
@@ -32,7 +37,7 @@
     <div class="col-md-2 sidebar">
         <h3 class="sub-header">MENU</h3>
     <ul class="nav nav-sidebar">
-        <a href="index.html"><li>USERS</li></a>
+        <a href="index.html" ><li>USERS</li></a>
         <li>DOCUMENTS</li>
         <li></li>
     </ul>

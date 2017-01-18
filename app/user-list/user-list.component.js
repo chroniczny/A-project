@@ -7,39 +7,62 @@ angular.module('app')
     .component('userList', {
         templateUrl: 'user-list/user-list.template.html',
 
-        controller: ['$http',
-            function UserListController($http) {
-                var self = this;
-                self.sortProp = 'name.first'; // filter: sorting results of searching by first name
+        controller: //  --- before SERVICE and FACTORY ----
+        // ['$http',
+        // function UserListController($http) {
+        //     var self = this;
+        //     self.sortProp = 'name.first'; // filter: sorting results of searching by first name
+        //
+        //     self.searchValue = '';
+        //
+        //     self.searchUser = function searchUser() {
+        //         self.filterProp = self.searchValue;
+        //     };
+        //
+        //     $http.get('users/users.json').then(function(response){
+        //         //self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
+        //
+        //          // setting data to localStorage in JSON format
+        //     localStorage.setItem('UserInStorage', JSON.stringify(response.data));
+        //
+        //          //viewing full localStorage in console
+        //     // console.log(localStorage.getItem('UserInStorage'));
+        //
+        //         // taking viewing data for templates by using localStorage data
+        //     self.users = JSON.parse(localStorage.getItem('UserInStorage'));
+        //     });
+        // }
+        // ]
 
-                self.searchValue = '';
+        // ------------ using service and factory ----
+            ['Userrr',
+                function UserListController(Userrr) {
+                    var self = this;
 
-                self.searchUser = function searchUser() {
-                    self.filterProp = self.searchValue;
-                };
+                    self.sortProp = 'name.first'; // filter: sorting results of searching by first name
+                    self.searchValue = '';
+                    self.searchUser = function searchUser() {
+                        self.filterProp = self.searchValue;
+                    };
 
-                $http.get('users/users.json').then(function(response){
-                    //self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
-                // localStorage.removeItem('UserStorage');
+                    // take data from json-files and set it to the localStorage by ng-click
+                    self.dataHunt = function dataHunt() {
+                        // set the data from factory Userrr.query() to the local storage
+                        // var huntedUsers = Userrr.query();
+                        localStorage.setItem('UserInStorage', JSON.stringify(Userrr.query()));
+                        // view it in console:
+                        console.log(localStorage.getItem('UserInStorage')); // GIVES ME [] as a Promise
+                    };
 
-                     // setting data to localStorage in JSON format
-                localStorage.setItem('UserInStorage', JSON.stringify(response.data));
+                    console.log(JSON.stringify(Userrr.query())); // again I see [] in console
 
-                     //viewing full localStorage in console
-                // console.log(localStorage.getItem('UserInStorage'));
+                    // for templates taking data from localStorage
+                    self.users = JSON.parse(localStorage.getItem('UserInStorage'));
 
-                    // taking viewing data for templates by using localStorage data
-                self.users = JSON.parse(localStorage.getItem('UserInStorage'));
+                    // self.users = Userrr.query();
 
+                }]
 
-                });
-
-
-
-
-
-              }
-            ]
 
     });
 
