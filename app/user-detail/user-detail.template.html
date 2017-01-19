@@ -8,8 +8,7 @@
                  alt="{{user.name.last}}"><br>
             <button class="btn-info change-photo">Change photo</button>
         </div>
-        <div class="input-group col-md-5 main"
-             ng-submit="UserDetailController.addDetail(user)">
+        <div class="input-group col-md-5 main">
             Name: * <br>
             <input ng-model="$ctrl.user.name.first" type="text" class="input-sm" name="$ctrl.name.first" placeholder="Name"
                    required="required"><br>
@@ -22,8 +21,8 @@
             <div>
                 Description: <br>
                 <input ng-model="$user.about" type="text" name="about" class="input-lg"><br>
-                <button ng-click="UserDetailController.addDetail(user)" class="btn-success">Save</button>
-                <button class="btn-success">Cancel</button>
+                <button ng-click="$ctrl.editDetail()"  type="submit" class="btn-success">Save</button>
+                <button class="btn-success"><a href="index.html">Cancel</a></button>
             </div>
         </div>
     </div>

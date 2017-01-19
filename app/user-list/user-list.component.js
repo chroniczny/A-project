@@ -46,20 +46,29 @@ angular.module('app')
                     };
 
                     // take data from json-files and set it to the localStorage by ng-click
-                    self.dataHunt = function dataHunt() {
+                    // self.dataHunt = function dataHunt() {
                         // set the data from factory Userrr.query() to the local storage
                         // var huntedUsers = Userrr.query();
-                        localStorage.setItem('UserInStorage', JSON.stringify(Userrr.query()));
+                        // localStorage.setItem('UserInStorage', JSON.stringify(Userrr.query()));
                         // view it in console:
-                        console.log(localStorage.getItem('UserInStorage')); // GIVES ME [] as a Promise
-                    };
+                        // console.log(localStorage.getItem('UserInStorage')); // GIVES ME [] as a Promise
+                    // };
 
-                    console.log(JSON.stringify(Userrr.query())); // again I see [] in console
+                    // console.log(JSON.stringify(Userrr.query())); // again I see [] in console
 
                     // for templates taking data from localStorage
-                    self.users = JSON.parse(localStorage.getItem('UserInStorage'));
+                    // self.users = JSON.parse(localStorage.getItem('UserInStorage'));
 
-                    // self.users = Userrr.query();
+                    /////// --- lets see again:
+
+                    self.users = Userrr.query();
+
+
+
+
+
+
+
 
                 }]
 
