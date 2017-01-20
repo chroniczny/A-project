@@ -8,52 +8,48 @@ angular.module('app')
         templateUrl: 'user-list/user-list.template.html',
 
         controller: //  --- before SERVICE and FACTORY ----
-        ['$http',
-        function UserListController($http) {
-             var self = this;
-             self.sortProp = 'name.first'; // filter: sorting results of searching by first name
+            ['$http',
+                function UserListController($http) {
+                    var self = this;
+                    self.sortProp = 'name.first'; // filter: sorting results of searching by first name
 
-             self.searchValue = '';
+                    self.searchValue = '';
 
-             self.searchUser = function searchUser() {
-                 self.filterProp = self.searchValue;
-             };
+                    self.searchUser = function searchUser() {
+                        self.filterProp = self.searchValue;
+                    };
 
-             $http.get('users/users.json').then(function(response){
-                 //self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
+                    // self.loadUsers = function loadUsers() {
+                        $http.get('users/users.json').then(function (response) {
+                            //self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
 
-                  // setting data to localStorage in JSON format
-             localStorage.setItem('UserInStorage', JSON.stringify(response.data));
+                            // setting data to localStorage in JSON format
+                            localStorage.setItem('UsersInStorage', JSON.stringify(response.data));
+                        });
+                    // };
+                    // what is loaded treat as source
+                    self.users = JSON.parse(localStorage.getItem('UsersInStorage'));
 
-                  //viewing full localStorage in console
-             // console.log(localStorage.getItem('UserInStorage'));
+                    self.deleteUser = function deleteUser(user) {
+                        var newUsers = [];
+                        var filterinUsers = self.users;
 
-                 // taking viewing data for templates by using localStorage data
-             self.users = JSON.parse(localStorage.getItem('UserInStorage'));
-             });
+                        for (var i = 0; i < filterinUsers.length; i++) {
+                            if (filterinUsers[i].id != user.id) {
+                                newUsers.push(filterinUsers[i]);
+                            } else {
+                                console.log(filterinUsers[i].id + " IS OUT");
+                            }
+                        }
 
-            self.deleteUser = function deleteUser(user){
-                var newUsers = [];
-                var filterinUsers = self.users;
-
-                for (var i = 0; i<filterinUsers.length; i++){
-                    if (filterinUsers[i].id != user.id) {
-                        newUsers.push(filterinUsers[i]);
-                    } else {
-                        console.log(filterinUsers[i].id);
+                        localStorage.setItem('UsersInStorage', JSON.stringify(newUsers));
+                        console.log(localStorage.getItem('UsersInStorage'));
+                        // filterinUsers = newUsers;
                     }
-                 }
-
-                localStorage.setItem('newUsers', JSON.stringify(newUsers));
-                console.log(localStorage.getItem('newUsers'));
-                // filterinUsers = newUsers;
-
-            }
 
 
-
-        }
-        ]
+                }
+            ]
 
         // ------------ using service and factory ----
         //    ['Userrr',
@@ -85,13 +81,7 @@ angular.module('app')
         //            self.users = Userrr.query();
 
 
-
-
-
-
-
-
-                //}]
+        //}]
 
 
     });

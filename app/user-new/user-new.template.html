@@ -8,22 +8,28 @@
                  alt="{{user.name.last}}"><br>
             <button class="btn-info change-photo">Change photo</button>
         </div>
-        <div class="input-group col-md-5 main">
-            Name: * <br>
-            <input ng-model="$ctrl.user.name.first" type="text" class="input-sm" name="$ctrl.name.first" placeholder="Name"
-                   required="required"><br>
-            Surname: * <br>
-            <input ng-model="$ctrl.user.name.last" type="text" class="input-sm" name="$ctrl.name.last" placeholder="Surname"
-                   required="required"><br>
-            E-mail: <br>
-            <input ng-model="$ctrl.user.email" type="email" class="input-sm" name="$ctrl.email" placeholder="e-mail">
+        <form name="userForm" ng-submit="$ctrl.submitForm(userForm.$valid)" ng-class="{'has-error' : userForm.name.first.$invalid && !$ctrl.userForm.name.first.$pristine}" novalidate>
+            <div class="input-group col-md-5 main">
+                Name: * <br>
+                <input ng-model="$ctrl.user.name.first" ng-required="true" type="text" class="input-sm"
+                       name="$ctrl.name.first" placeholder="Name" ng-minlength="3" ng-maxlength="8"><br>
+                <p ng-show="userForm.name.first.$error.minlength" >Name is too short.</p>
+                <p ng-show="userForm.name.first.$error.maxlength" >Name is too long.</p>
+                Surname: * <br>
+                <input ng-model="$ctrl.user.name.last" ng-required="true" type="text" class="input-sm"
+                       name="$ctrl.name.last" placeholder="Surname"><br>
+                E-mail: <br>
+                <input ng-model="$ctrl.user.email" type="email" class="input-sm" name="$ctrl.email"
+                       placeholder="e-mail">
 
-            <div>
+                <!--<div>-->
                 Description: <br>
-                <input ng-model="$user.about" type="text" name="about" class="input-lg"><br>
-                <button ng-click="$ctrl.setDetail()"  type="submit" class="btn-success">Save</button>
+                <input ng-model="$ctrl.user.about" type="text" name="$ctrl.user.about" class="input-sm"
+                       placeholder="Something about you...?"><br>
+                <button ng-click="$ctrl.setDetail()" type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Save</button>
                 <button class="btn-success"><a href="index.html">Cancel</a></button>
+                <!--</div>-->
             </div>
-        </div>
+        </form>
     </div>
 </div>
