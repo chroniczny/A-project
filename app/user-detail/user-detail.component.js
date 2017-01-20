@@ -33,7 +33,7 @@ angular.module('userDetail')
 
 
                 self.editDetail = function editDetail() { // for now: set new data to localStorage
-                    var newUser = {
+                    var editedUser = {
                       id: "'" + $routeParams.userId + "'",
                         name: {
                             first: self.user.name.first,
@@ -43,7 +43,7 @@ angular.module('userDetail')
                         about: self.user.about
                     };
                     // set new data to localStorage -
-                    localStorage.setItem("'" + $routeParams.userId + "'" ,JSON.stringify(newUser));
+                    localStorage.setItem($routeParams.userId ,JSON.stringify(editedUser));
                     // console.log("just checking");
                 }
 

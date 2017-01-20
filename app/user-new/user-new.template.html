@@ -8,7 +8,7 @@
                  alt="{{user.name.last}}"><br>
             <button class="btn-info change-photo">Change photo</button>
         </div>
-        <form name="userForm" ng-submit="$ctrl.submitForm(userForm.$valid)" ng-class="{'has-error' : userForm.name.first.$invalid && !$ctrl.userForm.name.first.$pristine}" novalidate>
+        <form name="userForm" ng-submit="$ctrl.submitForm(userForm.$valid)" ng-class="{'has-error' : userForm.name.first.$invalid && !userForm.name.first.$pristine}" novalidate>
             <div class="input-group col-md-5 main">
                 Name: * <br>
                 <input ng-model="$ctrl.user.name.first" ng-required="true" type="text" class="input-sm"
@@ -26,7 +26,7 @@
                 Description: <br>
                 <input ng-model="$ctrl.user.about" type="text" name="$ctrl.user.about" class="input-sm"
                        placeholder="Something about you...?"><br>
-                <button ng-click="$ctrl.setDetail()" type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Save</button>
+                <button ng-click="$ctrl.setDetail(user)" type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Save</button>
                 <button class="btn-success"><a href="index.html">Cancel</a></button>
                 <!--</div>-->
             </div>
