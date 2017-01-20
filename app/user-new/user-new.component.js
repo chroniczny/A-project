@@ -23,7 +23,7 @@ angular.module('userNew')
                 self.setDetail = function setDetail() { // for now: set new data to localStorage
                     console.log(self.user);
                     self.newUser = {
-                        id: self.user.name.first + "_" + self.user.name.last, // but it doesn;t change!!
+                        id: self.user.name.first + "_" + self.user.name.last, // but it doesn't change!!
                         name: {
                             first: self.user.name.first,
                             last: self.user.name.last
@@ -38,7 +38,7 @@ angular.module('userNew')
                 };
 
 
-                // to control submit form
+                /////////////////////////////to control submit form
                 // self.submitForm = function submitForm(isValid) {
                 //
                 //     if (isValid) {

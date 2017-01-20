@@ -30,23 +30,42 @@ angular.module('app')
                     // what is loaded treat as source
                     self.users = JSON.parse(localStorage.getItem('UsersInStorage'));
 
+                 //========= DELETING in VANILLA ========== WORKS!
                     self.deleteUser = function deleteUser(user) {
-                        var newUsers = [];
-                        var filterinUsers = self.users;
 
-                        for (var i = 0; i < filterinUsers.length; i++) {
-                            if (filterinUsers[i].id != user.id) {
-                                newUsers.push(filterinUsers[i]);
+                        alert('You actually deleted user: '+user.name.first+" "+user.name.last);
+
+                        var newUsers = [];
+                        var filteredUsers = self.users;
+
+                         for (var i = 0; i < filteredUsers.length; i++) {
+                            if (filteredUsers[i].id != user.id) {
+                                newUsers.push(filteredUsers[i]);
                             } else {
-                                console.log(filterinUsers[i].id + " IS OUT");
+                                console.log(filteredUsers[i].id + " IS OUT");
                             }
                         }
-
                         localStorage.setItem('UsersInStorage', JSON.stringify(newUsers));
-                        console.log(localStorage.getItem('UsersInStorage'));
-                        // filterinUsers = newUsers;
-                    }
+                        // console.log(localStorage.getItem('UsersInStorage')); // checkin
 
+                        // after (and for further) deletings our new base for template  is 'newUsers'
+                        self.users = newUsers; // WORKS!!!
+                    };
+
+
+             // ______DELETING in Lo__________try try try
+             //        self.deleteUser = function deleteUser(user) {
+             //            console.log(user.id + " IS OUT");
+             //
+             //            var newUsersList = JSON.stringify(self.users);
+             //            console.log('AAAAAAAAAAA' + newUsersList);
+             //            _.remove(newUsersList,function(b){
+             //                return b.id == user.id;
+             //            });
+             //
+             //            localStorage.setItem('UsersInStorage', JSON.stringify(newUsersList));
+             //            console.log('LOCAL STORAGE HAS: '+localStorage.getItem('UsersInStorage'));
+             //        }
 
                 }
             ]

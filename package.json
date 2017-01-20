@@ -30,7 +30,7 @@
     "gulp-recipe-preprocess": "^0.1.2",
     "gulp-recipe-rev": "^0.1.2",
     "gulp-recipe-sass": "^0.1.4",
-    "lodash": "^3.3.1",
+    "lodash": "^3.10.1",
     "require-dir": "^0.1.0"
   },
   "devDependencies": {
