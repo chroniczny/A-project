@@ -20,13 +20,13 @@
                        name="$ctrl.name.last" placeholder="Surname"><br>
                 E-mail: <br>
                 <input ng-model="$ctrl.user.email" type="email" class="input-sm" name="$ctrl.email"
-                       placeholder="e-mail">
+                       placeholder="e-mail"><br>
 
                 <!--<div>-->
                 Description: <br>
                 <input ng-model="$ctrl.user.about" type="text" name="$ctrl.about" class="input-sm"
                        placeholder="Something about you...?"><br>
-                <button ng-click="$ctrl.setDetail(user)" type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Save</button>
+                <button ng-click="$ctrl.setDetail()" type="submit" class="btn-success" ng-disabled="userForm.$invalid"> + SAVE</button> <!--ng-disabled="userForm.$invalid"-->
                 <button class="btn-success"><a href="index.html">Cancel</a></button>
                 <!--</div>-->
             </div>

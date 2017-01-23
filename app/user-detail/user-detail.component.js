@@ -11,9 +11,9 @@ angular.module('userDetail')
 
         controller: ['$http', '$routeParams',
             function UserDetailController($http, $routeParams) {
-
-                this.userId = $routeParams.userId;
                 var self = this;
+                this.userId = $routeParams.userId;
+
 
                 $http.get('users/' + $routeParams.userId + '.json')
                     .then(function (response) {
@@ -26,19 +26,11 @@ angular.module('userDetail')
                         // taking viewing data for templates by using localStorage data
                         self.user = JSON.parse(localStorage.getItem("'" + $routeParams.userId + "'"));
 
-                        //cleaning localStorage from this used item:
-                        // localStorage.removeItem("'" + $routeParams.userId + "'", JSON.stringify(response.data));
-
                     });
 
 // BETTER VERSION without 'broker'
                 self.editDetail = function editDetail(user) { // for now: set new data to localStorage
                     self.user.id = $routeParams.userId;
-                    self.user.name.first = self.user.name.first;
-                    self.user.name.last = self.user.name.last;
-
-                    self.user.email = self.user.email;
-                    self.user.about = self.user.about;
 
                     localStorage.setItem("'" + $routeParams.userId + "'", JSON.stringify(self.user));
 
@@ -56,7 +48,7 @@ angular.module('userDetail')
                         }
                         localStorage.setItem('UsersInStorage', JSON.stringify(updatedUsers));
                         // self.users = updatedUsers;
-                        console.log(updatedUsers +"what I've done");
+                        console.log(updatedUsers.length +" is how many has been done: user-detail");
 
                     }
 

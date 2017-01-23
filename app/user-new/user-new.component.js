@@ -9,45 +9,44 @@ angular.module('userNew')
         templateUrl: 'user-new/user-new.template.html',
 
         controller: ['$http',
-            // '$routeParams',
-            function UserNewController($http //, $routeParams
-         ) {
+            '$routeParams',
+            function UserNewController($http , $routeParams) {
                 var self = this;
-                // self.userId = $routeParams.userId;
-
+                self.userId = $routeParams.userId;
 
                 $http.get('Users/NewUser.json')
                     .then(function (response) {
                         self.user = response.data;
-
+                        localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(self.user));
+                        self.user = JSON.parse(localStorage.getItem(self.user.name.first + "_" + self.user.name.last));
                     });
 
-                self.setDetail = function setDetail() { // for now: set new data to localStorage
+                self.setDetail = function setDetail(user) { // for now: set new data to localStorage
                     self.user.id = self.user.name.first + "_" + self.user.name.last;
-                    self.user.name.first = self.user.name.first;
-                    self.user.name.last = self.user.name.last;
 
-                    self.user.email = self.user.email;
-                    self.user.about = self.user.about;
-
-                    localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(self.user));
-                    addUser(user);
-
-                    function addUser(user) {
-                        // var updatedUsers = [];
-                        var updatedUsers = JSON.parse(localStorage.getItem('UsersInStorage'));
-                        console.log(JSON.parse(updatedUsers));
-                        for (var i = 0; i < updatedUsers.length; i++) {
-                            if (updatedUsers[i].id == self.user.id) {
+                    // localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(self.user));
+                    addUser(self.user);
+                    //
+                    function addUser() {
+                        // var addedUsers = [];
+                        var addedUsers = JSON.parse(localStorage.getItem('UsersInStorage'));
+                        console.log(addedUsers.length);
+                        for (var i = 0; i < addedUsers.length; i++) {
+                            if (addedUsers[i].id == self.user.id) {
                                 alert("Rejection! User You want to add is already there.");
-                                return;
+
+                                console.log(addedUsers[i].id+" is rejected");
+                                console.log(self.user.id+" if rejected");
+                                // return;
                             } else {
-                                updatedUsers.push(user);
+                                console.log(self.user.id+" if added");
+                                addedUsers.push(self.user);
                             }
                         }
-                        localStorage.setItem('UsersInStorage', JSON.stringify(updatedUsers));
-                        self.users = updatedUsers;
-                        console.log(self.users);
+                        localStorage.setItem('UsersInStorage', JSON.stringify(addedUsers));
+                        self.users = addedUsers;
+                        console.log(addedUsers.length);
+                        // console.log(self.users);
                     }
 
 

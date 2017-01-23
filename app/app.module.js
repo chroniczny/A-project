@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app', [
-'userDetail',
+    'userDetail',
     'userNew',
     'userList',
     'ngRoute'
