@@ -27,7 +27,7 @@ angular.module('app')
                             localStorage.setItem('UsersInStorage', JSON.stringify(response.data));
                         });
                     // };
-                    // what is loaded treat as source
+                    // what is loaded LETS treat as source
                     self.users = JSON.parse(localStorage.getItem('UsersInStorage'));
 
                  //========= DELETING in VANILLA ========== WORKS!
@@ -102,67 +102,4 @@ angular.module('app')
 
         //}]
 
-
     });
-
-//function UserListController() {
-//    this.Users =
-//        //Factory.query();
-//        [
-//        {
-//            id: '1234567890',
-//            age: '40',
-//            eyeColor: 'blue',
-//            name: {
-//                first: 'Winnie',
-//                last: 'Ballard'
-//            },
-//            company: 'LIMOZEN',
-//            email: 'winnie.ballard@limozen.tv',
-//            about: 'Sit Lorem labore aliquip laboris reprehenderit nulla adipisicing occaecat tempor ipsum ex minim culpa fugiat. Lorem culpa cillum exercitation reprehenderit sint sint. Mollit cillum id officia proident amet ut id magna. Tempor dolore fugiat irure eiusmod in sit amet id ad non.'
-//
-//        },
-//
-//        {
-//            id: '1234567891',
-//            age: '60',
-//            eyeColor: 'black',
-//            name: {
-//                first: 'Winona',
-//                last: 'Black'
-//            },
-//            company: 'LIEN',
-//            email: 'winona.black@lien.tv',
-//            about: 'Nulla adipisicing occaecat tempor ipsum ex minim culpa fugiat. Lorem culpa cillum exercitation reprehenderit sint sint. Mollit cillum id officia proident amet ut id magna. Tempor dolore fugiat irure eiusmod in sit amet id ad non.'
-//
-//        },
-//        {
-//            id: '1234567892',
-//            age: '6',
-//            eyeColor: 'green',
-//            name: {
-//                first: 'Kacper',
-//                last: 'Black'
-//            },
-//            company: 'LIEN',
-//            email: 'Kacper.black@lien.tv',
-//            about: 'Tempor ipsum ex minim culpa fugiat. Lorem culpa cillum exercitation reprehenderit sint sint. Mollit cillum id officia proident amet ut id magna. Tempor dolore fugiat irure eiusmod in sit amet id ad non.'
-//
-//        },
-//
-//        {
-//            id: '1234567893',
-//            age: '16',
-//            eyeColor: 'black',
-//            name: {
-//                first: 'Gosia',
-//                last: 'Black'
-//            },
-//            company: 'Roeoe',
-//            email: 'gosia.black@roeoe.tv',
-//            about: 'Lorem culpa cillum exercitation reprehenderit sint sint. Mollit cillum id officia proident amet ut id magna. Tempor dolore fugiat irure eiusmod in sit amet id ad non.'
-//
-//        }
-//    ];
-//
-//}

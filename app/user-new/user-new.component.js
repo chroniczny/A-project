@@ -10,74 +10,57 @@ angular.module('userNew')
 
         controller: ['$http',
             '$routeParams',
-            function UserNewController($http , $routeParams) {
+            function UserNewController($http, $routeParams) {
                 var self = this;
                 self.userId = $routeParams.userId;
 
                 $http.get('Users/NewUser.json')
                     .then(function (response) {
                         self.user = response.data;
+                        console.log("name/is before changing " + self.user.name.first + "_" + self.user.name.last);
                         localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(self.user));
                         self.user = JSON.parse(localStorage.getItem(self.user.name.first + "_" + self.user.name.last));
                     });
 
-                self.setDetail = function setDetail(user) { // for now: set new data to localStorage
-                    self.user.id = self.user.name.first + "_" + self.user.name.last;
+                // self.setDetail =
+                function setDetail() { // for now: set new data to localStorage
 
-                    // localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(self.user));
-                    addUser(self.user);
-                    //
-                    function addUser() {
-                        // var addedUsers = [];
-                        var addedUsers = JSON.parse(localStorage.getItem('UsersInStorage'));
-                        console.log(addedUsers.length);
-                        for (var i = 0; i < addedUsers.length; i++) {
-                            if (addedUsers[i].id == self.user.id) {
-                                alert("Rejection! User You want to add is already there.");
+                    var checkingId = self.user.name.first + "_" + self.user.name.last;
+                    var checkingEmail = self.user.email;
+                    // console.log(checkingId);
+                    var addedUsers = JSON.parse(localStorage.getItem('UsersInStorage'));
 
-                                console.log(addedUsers[i].id+" is rejected");
-                                console.log(self.user.id+" if rejected");
-                                // return;
-                            } else {
-                                console.log(self.user.id+" if added");
-                                addedUsers.push(self.user);
-                            }
+                    //-- searching for clones
+                    var checkbox = []; // for checkin: is there new user with typed name&surname already
+                    for (var i = 0; i < addedUsers.length; i++) {
+                        if (addedUsers[i].id === checkingId && addedUsers[i].email === checkingEmail) {
+                            checkbox.push('1');
                         }
-                        localStorage.setItem('UsersInStorage', JSON.stringify(addedUsers));
-                        self.users = addedUsers;
-                        console.log(addedUsers.length);
-                        // console.log(self.users);
                     }
 
-
-                    // console.log(self.user);
-                    // self.newUser = {
-                    //     id: self.user.name.first + "_" + self.user.name.last, // but it doesn't change!!
-                    //     name: {
-                    //         first: self.user.name.first,
-                    //         last: self.user.name.last
-                    //     },
-                    //     email: self.user.email,
-                    //     about: self.user.about // it doesn't change too in locStorage!!!
-                    // };
-                    // set new data to localStorage -
-                    // localStorage.removeItem('NewUser');
-                    // localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(newUser)); //
-                    // console.log("just checking");
-                };
-
+                    if (checkbox.length > 0) { // means theres no clones in base...
+                        alert('Warning, there is a user called ' + checkingId)
+                    } else {
+                        self.user.id = self.user.name.first + "_" + self.user.name.last;
+                        localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(self.user));
+                        var createdUser = localStorage.getItem(self.user.name.first + "_" + self.user.name.last);
+                        // console.log(addedUsers.length + " at start"); // for chceckin
+                        addedUsers.push(JSON.parse(createdUser));
+                        localStorage.setItem('UsersInStorage', JSON.stringify(addedUsers));
+                        self.users = addedUsers; // because Users are different from now...
+                        // to check in console
+                        // console.log(createdUser);
+                        // console.log(addedUsers.length + " at the end");
+                    }
+                }
 
                 /////////////////////////////to control submit form
-                // self.submitForm = function submitForm(isValid) {
-                //
-                //     if (isValid) {
-                //         setDetail();
-                //         alert('Your changes will be saved');
-                //     }
-                // }
+                self.submitForm = function submitForm(isValid) {
+                    if (isValid) {
+                        setDetail();
+                        alert('Your changes will be saved');
 
-
+                    }
+                }
             }]
-
-
     });
