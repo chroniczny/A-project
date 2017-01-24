@@ -7,6 +7,8 @@
 // --- browsersync -- thing ---
 
 var gulp = require('gulp');
+var plugins = require('gulp-load-plugins')(); //++++
+
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var browserify = require('browserify');
@@ -36,13 +38,13 @@ gulp.task('serve', ['sass'], function () {
         server: "./app"
     });
 
-    gulp.watch("app/scss/*.scss", ['sass']);
+    gulp.watch("app/../*.scss", ['sass']);
     gulp.watch("app/../*.html").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers ||| runs by calling it
 gulp.task('sass', function () {
-    return gulp.src("app/*.scss")
+    return gulp.src("app/../*.scss")
         .pipe(sass())
         .pipe(gulp.dest("app"))
         .pipe(browserSync.stream());
@@ -51,7 +53,7 @@ gulp.task('sass', function () {
 gulp.task('default', ['serve']);
 
 
-// process JS files and return the stream.
+// // process JS files and return the stream.
 // gulp.task('js', function () {
 //     return gulp.src('app/../*js') // ****** ???
 //         .pipe(browserify())
@@ -78,5 +80,20 @@ gulp.task('default', ['serve']);
 //
 //     // add browserSync.reload to the tasks array to make
 //     // all browsers reload after tasks are complete.
-//     gulp.watch("ja/*.js", ['js-watch']); // ++++++ can I 'js' named as app
+//     gulp.watch("app/../*.js", ['js-watch']); // ++++++ can I 'js' named as app
 // });
+
+gulp.task('browser-sync', function () {
+    var files = [
+        'app/**/*.html',
+        'app/**/*.css',
+        // 'app/assets/imgs/**/*.png',
+        'app/**/*.js'
+    ];
+
+    browserSync.init(files, {
+        server: {
+            baseDir: './app'
+        }
+    });
+});
