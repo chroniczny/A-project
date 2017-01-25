@@ -21,6 +21,8 @@ angular.module('app')
 
                     // self.loadUsers = function loadUsers() {
                         $http.get('users/users.json').then(function (response) {
+
+                            //https://https://a-fire.firebaseio.com/   // ... in firebase
                             //self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
 
                             // setting data to localStorage in JSON format
