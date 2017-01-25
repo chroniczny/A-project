@@ -33,13 +33,13 @@ angular.module('app')
                  //========= DELETING in VANILLA ========== WORKS!
                     self.deleteUser = function deleteUser(user) {
 
-                        alert('You actually deleted user: '+user.name.first+" "+user.name.last);
+                        alert("You've just deleted user: "+user.name.first+" "+user.name.last);
 
                         var newUsers = [];
-                        var filteredUsers = self.users;
+                        var filteredUsers = self.users; // users in localStorage
 
                          for (var i = 0; i < filteredUsers.length; i++) {
-                            if (filteredUsers[i].id != user.id) {
+                            if (filteredUsers[i].id != user.id) { // user means: clicked/chosen user
                                 newUsers.push(filteredUsers[i]);
                             } else {
                                 console.log(filteredUsers[i].id + " IS OUT");
@@ -50,6 +50,13 @@ angular.module('app')
 
                         // after (and for further) deletings our new base for template  is 'newUsers'
                         self.users = newUsers; // WORKS!!!
+
+    // ++++++++++++ LEFT service for DELETING ======= SHOULD WORK WITH BACK-END
+
+                        // $http.post('users/users.json', newUsers); // changes information about whole collection
+                        //
+                        // // to delete file with chosen USER by user.id from the 'users' location
+                        // $http.delete('users/'+user.id+'.json');
                     };
 
 

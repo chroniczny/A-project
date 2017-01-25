@@ -19,8 +19,8 @@ li.thumbnail > img {
 
 .user-images {
   display: block;
-  max-width: 300px;
-  max-height: 300px; }
+  max-width: 250px;
+  max-height: 250px; }
 
 button.change-photo {
   display: block; }

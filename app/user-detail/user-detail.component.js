@@ -37,8 +37,22 @@ angular.module('userDetail')
                         }
                         localStorage.setItem('UsersInStorage', JSON.stringify(updatedUsers));
                         // self.users = updatedUsers;
-                        console.log(updatedUsers.length +" is how many has been done: user-detail");
+                        console.log(updatedUsers.length +" elements: user-detail");
                     }
-                }
+
+                    //////////// to PUT a NEW USER into base ......
+                 // $http.post('users/' + $routeParams.userId + '.json', self.user); // should create new file 'self.user.id'.json
+                 // $http.post('users/users.json', updatedUsers); // changes information about whole collection
+                };
+
+                /////////////////////////////to control submit form
+                // self.submitForm = function submitForm(isValid) {
+                //     if (isValid) {
+                //         editDetail(user);
+                //         alert('Your changes will be edited');
+                //     }
+                // }
+
+
             }]
     });

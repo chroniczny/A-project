@@ -51,6 +51,11 @@ angular.module('userNew')
                         // to check in console
                         // console.log(createdUser);
                         // console.log(addedUsers.length + " at the end");
+
+                      //////////// to POST a new user......
+                     // $http.post('users/'+user.id+'.json', self.user); // should create new file 'self.user.id'.json
+                     // $http.post('users/users.json', addedUsers); // changes information about whole collection
+
                     }
                 }
 
@@ -58,8 +63,7 @@ angular.module('userNew')
                 self.submitForm = function submitForm(isValid) {
                     if (isValid) {
                         setDetail();
-                        alert('Your changes will be saved');
-
+                        alert('Your changes will be saved, new user is created');
                     }
                 }
             }]
