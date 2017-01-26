@@ -24,10 +24,19 @@ angular.module('userNew')
 
                 // self.setDetail =
                 function setDetail() { // for now: set new data to localStorage
-
+                    // self.user = JSON.parse(localStorage.getItem(self.user.name.first + "_" + self.user.name.last));
                     var checkingId = self.user.name.first + "_" + self.user.name.last;
                     var checkingEmail = self.user.email;
                     // console.log(checkingId);
+
+                    $http.get('https://a-fire.firebaseio.com/.json').then(function (response) {
+                        self.users = response.data;
+                        // console.log(JSON.stringify(self.users));
+                        localStorage.setItem('UsersInStorage', JSON.stringify(response.data));
+                    });
+
+
+
                     var addedUsers = JSON.parse(localStorage.getItem('UsersInStorage'));
 
                     //-- searching for clones
@@ -37,26 +46,25 @@ angular.module('userNew')
                             checkbox.push('1');
                         }
                     }
-
                     if (checkbox.length > 0) { // means theres no clones in base...
                         alert('Warning, there is a user called ' + checkingId)
                     } else {
                         self.user.id = self.user.name.first + "_" + self.user.name.last;
                         localStorage.setItem(self.user.name.first + "_" + self.user.name.last, JSON.stringify(self.user));
                         var createdUser = localStorage.getItem(self.user.name.first + "_" + self.user.name.last);
-                        // console.log(addedUsers.length + " at start"); // for chceckin
+                        console.log(addedUsers.length + " at start"); // for chceckin
                         addedUsers.push(JSON.parse(createdUser));
                         localStorage.setItem('UsersInStorage', JSON.stringify(addedUsers));
-                        self.users = addedUsers; // because Users are different from now...
+                        // self.users = addedUsers; // because Users are different from now...
                         // to check in console
-                        // console.log(createdUser);
-                        // console.log(addedUsers.length + " at the end");
-
-                      //////////// to POST a new user......
-                     // $http.post('users/'+user.id+'.json', self.user); // should create new file 'self.user.id'.json
-                     // $http.post('users/users.json', addedUsers); // changes information about whole collection
-
+                        console.log(createdUser);
+                        console.log(addedUsers.length + " of users at the end");
                     }
+
+                    $http.put('https://a-fire.firebaseio.com/.json', addedUsers); // changes information about whole collection
+
+                    // $http.post('https://a-fire.firebaseio.com/'+ createdUser.id + '.json', createdUser, {key: createdUser.id}); // creates new file 'self.user.id'.json UT as UNDEFINED object ...
+
                 }
 
                 /////////////////////////////to control submit form

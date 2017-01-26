@@ -12,28 +12,20 @@ angular.module('app')
                 function UserListController($http) {
                     var self = this;
                     self.sortProp = 'name.first'; // filter: sorting results of searching by first name
-
                     self.searchValue = '';
-
                     self.searchUser = function searchUser() {
                         self.filterProp = self.searchValue;
                     };
-
-                    // self.loadUsers = function loadUsers() {
-                        $http.get('users/users.json').then(function (response) {
-
-                            //https://https://a-fire.firebaseio.com/   // ... in firebase
-                            //self.users = response.data; // --> .slice(0,5); ale potem nie wyszukuje wśród wszsytkich
-
+                    //     $http.get('users/users.json').then(function (response) {
+                        $http.get('https://a-fire.firebaseio.com/.json').then(function (response) {
                             // setting data to localStorage in JSON format
                             localStorage.setItem('UsersInStorage', JSON.stringify(response.data));
                         });
-                    // };
                     // what is loaded LETS treat as source
                     self.users = JSON.parse(localStorage.getItem('UsersInStorage'));
 
                  //========= DELETING in VANILLA ========== WORKS!
-                    self.deleteUser = function deleteUser(user) {
+                    self.deleteUser = function deleteUser(user) { // thanks angular scope it is known which user is clicked
 
                         alert("You've just deleted user: "+user.name.first+" "+user.name.last);
 
@@ -48,17 +40,14 @@ angular.module('app')
                             }
                         }
                         localStorage.setItem('UsersInStorage', JSON.stringify(newUsers));
-                        // console.log(localStorage.getItem('UsersInStorage')); // checkin
 
                         // after (and for further) deletings our new base for template  is 'newUsers'
-                        self.users = newUsers; // WORKS!!!
-
-    // ++++++++++++ LEFT service for DELETING ======= SHOULD WORK WITH BACK-END
-
-                        // $http.post('users/users.json', newUsers); // changes information about whole collection
+                        // self.users = newUsers; // WORKS!!! if we dont use a firebase
+    // ++++++++++++ service for DELETING ======= SHOULD WORK WITH FIREBASE
+                        $http.put('https://a-fire.firebaseio.com/.json', newUsers); // changes information about whole collection
                         //
                         // // to delete file with chosen USER by user.id from the 'users' location
-                        // $http.delete('users/'+user.id+'.json');
+                        // $http.delete('https://a-fire.firebaseio.com/.json'+user.id+'.json');
                     };
 
 

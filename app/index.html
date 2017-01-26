@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css"/>
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
     <script>
         // Initialize Firebase
+//        var firebase = require("firebase/app");
+//        require("firebase/database");
+
         var config = {
             apiKey: "AIzaSyDZuLs1vs0diL_nP8uNkc8thzv18Kx3WkY",
             authDomain: "a-fire.firebaseapp.com",
@@ -20,8 +25,7 @@
         };
         firebase.initializeApp(config);
     </script>
-
-    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <!--<script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>-->
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>

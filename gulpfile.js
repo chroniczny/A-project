@@ -18,7 +18,6 @@ var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 // var reload      = browserSync.reload;
 
-
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'
     , 'js-watch'
