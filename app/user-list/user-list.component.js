@@ -20,7 +20,7 @@ angular.module('app')
                     $http.get('https://a-fire.firebaseio.com/.json').then(function (response) {
                         // setting data to localStorage in JSON format
                         localStorage.setItem('UsersInStorage', JSON.stringify(response.data));
-                        self.users = JSON.parse(localStorage.getItem('UsersInStorage'));
+                        self.users = JSON.parse(localStorage.getItem('UsersInStorage')); // it is written down cause not using 'var'
                     });
                     // what is loaded LETS treat as source
 
@@ -58,12 +58,11 @@ angular.module('app')
                         // // to delete file with chosen USER by user.id from the 'users' location
                         // $http.delete('https://a-fire.firebaseio.com/.json'+user.id+'.json');
                     };
-
-
                 }
             ]
 
-        // ------------ using service and factory ----
+        //// ------------ using service and factory ----
+
         //    ['Userrr',
         //        function UserListController(Userrr) {
         //            var self = this;
@@ -91,8 +90,8 @@ angular.module('app')
         //            /////// --- lets see again:
         //
         //            self.users = Userrr.query();
-
-
-        //}]
+        //
+        //
+        // }]
 
     });
