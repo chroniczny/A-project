@@ -64,7 +64,7 @@ angular.module('userNew')
                     $http.put('https://a-fire.firebaseio.com/.json', addedUsers); // changes information about whole collection
 
                     // $http.post('https://a-fire.firebaseio.com/'+ createdUser.id + '.json', createdUser, {key: createdUser.id}); // creates new file 'self.user.id'.json UT as UNDEFINED object ...
-
+                    localStorage.removeItem(createdUser.id); // clean localStorage
                 }
 
                 /////////////////////////////to control submit form

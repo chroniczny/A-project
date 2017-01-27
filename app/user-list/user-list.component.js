@@ -40,12 +40,13 @@ angular.module('app')
                             }
                         }
                         localStorage.setItem('UsersInStorage', JSON.stringify(newUsers));
+                        localStorage.removeItem(user.id); // clean localStorage
 
                         // after (and for further) deletings our new base for template  is 'newUsers'
                         // self.users = newUsers; // WORKS!!! if we dont use a firebase
-    // ++++++++++++ service for DELETING ======= SHOULD WORK WITH FIREBASE
+
+                        // ++++++++++++ service for DELETING ======= SHOULD WORK WITH FIREBASE
                         $http.put('https://a-fire.firebaseio.com/.json', newUsers); // changes information about whole collection
-                        //
                         // // to delete file with chosen USER by user.id from the 'users' location
                         // $http.delete('https://a-fire.firebaseio.com/.json'+user.id+'.json');
                     };
@@ -60,7 +61,6 @@ angular.module('app')
              //            _.remove(newUsersList,function(b){
              //                return b.id == user.id;
              //            });
-             //
              //            localStorage.setItem('UsersInStorage', JSON.stringify(newUsersList));
              //            console.log('LOCAL STORAGE HAS: '+localStorage.getItem('UsersInStorage'));
              //        }
