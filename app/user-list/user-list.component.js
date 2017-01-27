@@ -17,53 +17,48 @@ angular.module('app')
                         self.filterProp = self.searchValue;
                     };
                     //     $http.get('users/users.json').then(function (response) {
-                        $http.get('https://a-fire.firebaseio.com/.json').then(function (response) {
-                            // setting data to localStorage in JSON format
-                            localStorage.setItem('UsersInStorage', JSON.stringify(response.data));
-                        });
+                    $http.get('https://a-fire.firebaseio.com/.json').then(function (response) {
+                        // setting data to localStorage in JSON format
+                        localStorage.setItem('UsersInStorage', JSON.stringify(response.data));
+                        self.users = JSON.parse(localStorage.getItem('UsersInStorage'));
+                    });
                     // what is loaded LETS treat as source
-                    self.users = JSON.parse(localStorage.getItem('UsersInStorage'));
 
-                 //========= DELETING in VANILLA ========== WORKS!
+
+                    //========= DELETING in VANILLA ========== WORKS!
                     self.deleteUser = function deleteUser(user) { // thanks angular scope it is known which user is clicked
 
-                        alert("You've just deleted user: "+user.name.first+" "+user.name.last);
+                        alert("You've just deleted user: " + user.name.first + " " + user.name.last);
 
-                        var newUsers = [];
                         var filteredUsers = self.users; // users in localStorage
 
-                         for (var i = 0; i < filteredUsers.length; i++) {
-                            if (filteredUsers[i].id != user.id) { // user means: clicked/chosen user
-                                newUsers.push(filteredUsers[i]);
-                            } else {
-                                console.log(filteredUsers[i].id + " IS OUT");
-                            }
-                        }
-                        localStorage.setItem('UsersInStorage', JSON.stringify(newUsers));
+                        //// ver. 1.
+                        // var newUsers = [];
+                        // for (var i = 0; i < filteredUsers.length; i++) {
+                        //     if (filteredUsers[i].id != user.id) { // user means: clicked/chosen user
+                        //         newUsers.push(filteredUsers[i]);
+                        //     } else {
+                        //         console.log(filteredUsers[i].id + " IS OUT");
+                        //     }
+                        // }
+                        // localStorage.setItem('UsersInStorage', JSON.stringify(newUsers));
+                        // localStorage.removeItem(filteredUsers[i].id);
+                        // $http.put('https://a-fire.firebaseio.com/.json', newUsers); // changes information about whole collection
+
+
+                        //// ver. 2. --- USING Lo -------------------
+                        _.remove(filteredUsers, function (b) {
+                            return b.id == user.id;
+                        });
+                        console.log(user.id + " IS OUT by Lo");
+                        localStorage.setItem('UsersInStorage', JSON.stringify(filteredUsers));
                         localStorage.removeItem(user.id); // clean localStorage
 
-                        // after (and for further) deletings our new base for template  is 'newUsers'
-                        // self.users = newUsers; // WORKS!!! if we dont use a firebase
-
-                        // ++++++++++++ service for DELETING ======= SHOULD WORK WITH FIREBASE
-                        $http.put('https://a-fire.firebaseio.com/.json', newUsers); // changes information about whole collection
+                        $http.put('https://a-fire.firebaseio.com/.json', filteredUsers); // changes information about whole collection
                         // // to delete file with chosen USER by user.id from the 'users' location
                         // $http.delete('https://a-fire.firebaseio.com/.json'+user.id+'.json');
                     };
 
-
-             // ______DELETING in Lo__________try try try
-             //        self.deleteUser = function deleteUser(user) {
-             //            console.log(user.id + " IS OUT");
-             //
-             //            var newUsersList = JSON.stringify(self.users);
-             //            console.log('AAAAAAAAAAA' + newUsersList);
-             //            _.remove(newUsersList,function(b){
-             //                return b.id == user.id;
-             //            });
-             //            localStorage.setItem('UsersInStorage', JSON.stringify(newUsersList));
-             //            console.log('LOCAL STORAGE HAS: '+localStorage.getItem('UsersInStorage'));
-             //        }
 
                 }
             ]
