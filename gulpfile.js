@@ -24,8 +24,9 @@ gulp.task('serve', ['sass'
 ], function() {
 
     browserSync.init({
-        server: "./app"
-    // {baseDir: "./"} //// ?????
+        server: {
+            baseDir: "./app"
+        }
     });
 
     gulp.watch("app/*.scss", ['sass']);

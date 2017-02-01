@@ -68,13 +68,16 @@ angular.module('userDetail')
                     for (var i = 0; i < self.users.length; i++) {
                         if (self.users[i].id === self.user.id) {
                             self.users[i] = self.user;
+                            var index = i;
+                            console.log('index: '+index);
                         }
                         editedUsers.push(self.users[i]);
                     }
 
                     localStorage.setItem('UsersInStorage', JSON.stringify(editedUsers));
-                    $http.put('https://a-fire.firebaseio.com/.json', editedUsers);// changes information about whole collection
-                    // $http.post('users/' + $routeParams.userId + '.json', self.user); // should create new file 'self.user.id'.json
+                    // $http.put('https://a-fire.firebaseio.com/.json', editedUsers);// changes information about whole collection
+                    $http.put('https://a-fire.firebaseio.com/' + index + '/.json', self.user); // updates ONLY ONE 'self.user' object
+
                     localStorage.removeItem(editedUser.id); // cleaning
                 };
 

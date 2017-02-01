@@ -37,13 +37,19 @@ angular.module('app')
                                 // for (var i = 0; i < filteredUsers.length; i++) {
                                 //     if (filteredUsers[i].id != user.id) { // user means: clicked/chosen user
                                 //         newUsers.push(filteredUsers[i]);
+                                //         console.log('its not '+i+" item")
+                                //
                                 //     } else {
                                 //         console.log(filteredUsers[i].id + " IS OUT");
+                                //         var indexOut = i;
                                 //     }
                                 // }
+                                //
+                                // $http.delete('https://a-fire.firebaseio.com/.json', filteredUsers[indexOut]); // changes information about whole collection
+                                // // $http.put('https://a-fire.firebaseio.com/.json', filteredUsers); // changes information about whole collection
+                                //
                                 // localStorage.setItem('UsersInStorage', JSON.stringify(newUsers));
-                                // localStorage.removeItem(filteredUsers[i].id);
-                                // $http.put('https://a-fire.firebaseio.com/.json', newUsers); // changes information about whole collection
+                                // localStorage.removeItem(filteredUsers[indexOut].id);
 
 
                                 //// ver. 2. --- USING Lo -------------------
@@ -57,6 +63,7 @@ angular.module('app')
                                 $http.put('https://a-fire.firebaseio.com/.json', filteredUsers); // changes information about whole collection
                                 // // to delete file with chosen USER by user.id from the 'users' location
                                 // $http.delete('https://a-fire.firebaseio.com/.json'+user.id+'.json');
+
                             };
                         }
                     ]
