@@ -22,9 +22,9 @@ angular.module('userNew')
                         self.user = JSON.parse(localStorage.getItem(self.user.name.first + "_" + self.user.name.last));
                     });
 
-                // self.setDetail =
                 function setDetail() { // for now: set new data to localStorage
                     // self.user = JSON.parse(localStorage.getItem(self.user.name.first + "_" + self.user.name.last));
+
                     var checkingId = self.user.name.first + "_" + self.user.name.last + "_" + self.user.index;
                     var checkingEmail = self.user.email;
                     // console.log(checkingId);
@@ -36,6 +36,7 @@ angular.module('userNew')
                     });
 
                     var addedUsers = JSON.parse(localStorage.getItem('UsersInStorage'));
+
                     //-- searching for clones
                     var checkbox = []; // for checkin: is there new user with typed name&surname already
                     for (var i = 0; i < addedUsers.length; i++) {
@@ -44,7 +45,7 @@ angular.module('userNew')
                         }
                     }
                     if (checkbox.length > 0) { // means theres no clones in base...
-                        alert('Warning, there is a user called ' + checkingId)
+                        alert('Warning, there is a user called ' + checkingId);
                     }
                     // else {
                     //     self.user.id = self.user.name.first + "_" + self.user.name.last+ "_" +self.user.index;
@@ -63,6 +64,7 @@ angular.module('userNew')
                     // localStorage.removeItem(createdUser.id); // clean localStorage
 
                     else {
+                        self.user.index = JSON.parse(localStorage.getItem('UsersInStorage')).length;
                         self.user.id = self.user.name.first + "_" + self.user.name.last + "_" + self.user.index;
                         localStorage.setItem(self.user.id, JSON.stringify(self.user));
                         var createdUser = localStorage.getItem(self.user.id);
@@ -75,6 +77,7 @@ angular.module('userNew')
                 /////////////////////////////to control submit form
                 self.submitForm = function submitForm(isValid) {
                     if (isValid) {
+
                         setDetail();
                         alert('Your changes will be saved, new user is created');
                     }
